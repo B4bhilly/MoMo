@@ -4,7 +4,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 
 
-import MainStackNavigator from './MainStackNavigator/MainStackNavigator';
+import MainStackNavigator from './Navigation/MainStackNavigator';
 
 export default function App() {
   return (

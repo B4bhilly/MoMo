@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Dimensions, Text, Pressable } from 'react-native';
+import { StyleSheet, View, Dimensions, Text, TouchableOpacity } from 'react-native';
 import Svg, { Path, Defs, LinearGradient as SvgGradient, Stop } from 'react-native-svg';
 
 const { width } = Dimensions.get('window');
 const height = 320; // adjust if needed
 const curveHeight = 70;
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const path = `
     M0,0 
     H${width} 
@@ -14,6 +14,10 @@ const LoginScreen = () => {
     A${width / 1.5},${curveHeight} 0 0 1 0,${height - curveHeight} 
     Z
   `;
+
+  const handleNavigationToSignup = () =>{
+    navigation.navigate('Signup');
+  };
 
   return (
     <View style={styles.container}>
@@ -45,9 +49,9 @@ const LoginScreen = () => {
             </View>
 
             <View style={styles.bottom}>
-              <View style={styles.button}>
+              <TouchableOpacity onPress={handleNavigationToSignup} style={styles.button}>
                 <Text style={[styles.text, {color:'white'}]}>NEXT</Text>
-              </View>
+              </TouchableOpacity>
             </View>
         </View>
     </View>
