@@ -95,7 +95,7 @@ const SignupScreen = ({navigation}) => {
   )
 }
 
-export default SignupScreen
+export default SignupScreen;
 
 const styles = StyleSheet.create({
     container: {
@@ -106,10 +106,8 @@ const styles = StyleSheet.create({
       },
       box: {
         position: 'absolute',
-        top: '-120',
-        left:'50%',
-        transform: [{ translateX: '-50%' }],//to center the box
-        // alignItems: 'center',
+        top: -120,
+        alignSelf:'center',
         height: 230,
         width: '90%',
         backgroundColor: 'white',

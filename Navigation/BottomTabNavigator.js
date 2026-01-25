@@ -18,17 +18,19 @@ const BottomTabNavigator = () => {
         headerShown:false,
         tabBarActiveTintColor: '#005e80',       // title color when selected
         tabBarInactiveTintColor: 'grey', 
+        tabBarLabelStyle:{fontSize:15},
         tabBarStyle: {
           height: 55,
-          paddingTop: 10,
+          paddingTop: 5,
         }, // title color when not selected
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
         if (route.name === 'Home') {
-          iconName = focused ? 'home' : 'home-outline';
-          return <Ionicons name={iconName} size={24} color={focused ? '#005e80' : 'grey'} />;
+          // iconName = focused ? 'home' : 'home-outline';
+          return <Ionicons name="home-outline" size={24} color={focused ? '#005e80' : 'grey'} />;
         } else if (route.name === 'Transfers') {
+          // iconName = focused ? 'Send' : 'Send-outline';
           return <Feather name="send" size={24} color={focused ? '#005e80' : 'grey'} />;
         } else if (route.name === 'ScanQR') {
           return(
@@ -59,17 +61,19 @@ const BottomTabNavigator = () => {
       }} />
 
       <Tab.Screen name="Offers" component={OffersScreen} options={{
-        title: "Offers"
+        title: "Offers",
+        tabBarStyle: {display: 'none'}
       }} />
 
       <Tab.Screen name="More" component={MoreScreen} options={{
-        title: "More"
+        title: "More",
+        tabBarStyle: {display: 'none'}
       }} />
     </Tab.Navigator>
   )
 }
 
-export default BottomTabNavigator
+export default BottomTabNavigator;
 
 const styles = StyleSheet.create({
   qr:{

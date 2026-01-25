@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Dimensions, Text, TouchableOpacity } from 'react-native';
+// import PhoneInput from 'react-native-phone-number-input';
 import Svg, { Path, Defs, LinearGradient as SvgGradient, Stop } from 'react-native-svg';
 
 const { width } = Dimensions.get('window');
@@ -36,7 +37,36 @@ const LoginScreen = ({navigation}) => {
 
         <View>
             <View style={styles.box}>
-                <Text style={styles.text}>Welcome to <Text style={{fontWeight:'bold'}}>MoMo</Text></Text>
+                <Text style={[styles.text,{textAlign:'center',fontSize:25}]}>Welcome to <Text style={{fontWeight:'bold',textAlign:'center'}}>MoMo</Text></Text>
+                {/* <View style={styles.bstyle}>
+                  <View style={styles.sbox}>
+
+                  </View>
+
+                  <View style={styles.bbox}>
+                  </View>
+                </View> */}
+                  {/* <PhoneInput
+                    defaultCode='GH'
+                    layout='first'
+                    placeholder='Enter number *'
+                    containerStyle={{
+                      // backgroundColor:'red',
+                      
+                    }}
+                    textInputProps={{
+                      placeholderTextColor:'black',
+                      style:{
+                        fontSize:20,
+                        fontWeight:'bold',
+                        
+
+                      }
+                    }}
+                    textContainerStyle={{
+                      
+                    }}                    
+                  /> */}
             </View>
             
             <View style={styles.tedit}>
@@ -69,10 +99,8 @@ const styles = StyleSheet.create({
   },
   box: {
     position: 'absolute',
-    top: '-120',
-    left:'50%',
-    transform: [{ translateX: '-50%' }],//to center the box
-    alignItems: 'center',
+    top: -120,
+    alignSelf:'center',
     height: 170,
     width: '90%',
     backgroundColor: 'white',
@@ -83,6 +111,24 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+  },
+  bstyle:{
+    marginTop:20,
+    flexDirection:'row',
+    justifyContent:'space-between'
+
+  },
+  sbox:{
+    height:80,
+    width:70,
+    borderWidth:1,
+    borderRadius:20,
+  },
+  bbox:{
+    height:80,
+    width:'70%',
+    borderWidth:1,
+    borderRadius:20,
   },
   text:{
     color:'#005e80',

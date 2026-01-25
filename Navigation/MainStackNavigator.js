@@ -5,7 +5,7 @@ import SignupScreen from '../Screens/LnSscreens/SignupScreen';
 import MainTab from './BottomTabNavigator';
 import HomeScreen from '../Screens/HomeScreens/HomeScreen';
 import TransfersScreen from '../Screens/TransfersScreens/TransfersScreen';
-import OffersScreen from '../Screens/OffersScreens/OffersScreen'
+import OffersScreen from '../Screens/OffersScreens/OffersScreen';
 import MoreScreen from '../Screens/MoreScreens/MoreScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 
@@ -28,4 +28,4 @@ const MainStackNavigator = () => {
   );
 }
 
-export default MainStackNavigator
+export default MainStackNavigator;
