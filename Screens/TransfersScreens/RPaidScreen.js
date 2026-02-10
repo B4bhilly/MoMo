@@ -9,7 +9,7 @@ const RPaidScreen = () => {
         <Image
           source={require('../../assets/Images/img1.jpg')}
           style={styles.image}
-          resizeMode='center'
+          resizeMode="contain"
         />
         <Text style={styles.text}>No recent payment found</Text>
       </View>

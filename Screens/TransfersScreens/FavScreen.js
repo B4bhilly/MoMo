@@ -8,7 +8,7 @@ const FavScreen = () => {
         <Image
           source={require('../../assets/Images/img1.jpg')}
           style={styles.image}
-          resizeMode='center'
+          resizeMode="contain"
         />
         <Text style={styles.text}>No favourites found</Text>
       </View>

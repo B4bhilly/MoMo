@@ -57,17 +57,17 @@ const BottomTabNavigator = () => {
 
       <Tab.Screen name="ScanQR" component={ScanQR} options={{
         title: "Scan QR",
-        tabBarStyle: {display: 'none'}        
+        tabBarButton: () => null        
       }} />
 
       <Tab.Screen name="Offers" component={OffersScreen} options={{
         title: "Offers",
-        tabBarStyle: {display: 'none'}
+        tabBarButton: () => null
       }} />
 
       <Tab.Screen name="More" component={MoreScreen} options={{
         title: "More",
-        tabBarStyle: {display: 'none'}
+        tabBarButton: () => null
       }} />
     </Tab.Navigator>
   )
