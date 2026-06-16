@@ -10,12 +10,12 @@ const curveHeight = 70;
 
 const TransfersScreen = ({navigation}) => {
   const path = `
-  M0,0 
-  H${width} 
-  V${height - curveHeight} 
-  A${width / 1.5},${curveHeight} 0 0 1 0,${height - curveHeight} 
-  Z
-`;
+    M0,0 
+    H${width} 
+    V${height - curveHeight} 
+    A${width / 1.5},${curveHeight} 0 0 1 0,${height - curveHeight} 
+    Z
+  `;
 
   return (
     <View style={styles.container}>
@@ -67,7 +67,7 @@ const TransfersScreen = ({navigation}) => {
 
         <TouchableOpacity style={styles.box1}>
           <MaterialCommunityIcons name="calendar-clock" size={30} color="#005e80" />
-          <Text style={styles.text}>MoMo user</Text>
+          <Text style={styles.text}>Schedule</Text>
         </TouchableOpacity>
 
       </View>
@@ -102,13 +102,11 @@ const styles = StyleSheet.create({
     width:'100%',
     justifyContent:'space-evenly',
     marginTop: -110,
-    alignSelf:'center',
   },
   cont1:{
     flexDirection:'row',
     marginTop:15,
     width:'100%',
-    alignSelf:'center',
     justifyContent:'space-evenly',
   },
   box: {

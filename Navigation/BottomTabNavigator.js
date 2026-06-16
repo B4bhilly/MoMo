@@ -2,11 +2,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Ionicons,Entypo, Feather} from '@expo/vector-icons';
-import HomeScreen from '../Screens/HomeScreens/HomeScreen';
+import HomeStackNavigator from './HomeStackNavigator';
 import TransfersScreen from '../Screens/TransfersScreens/TransfersScreen';
 import ScanQR from '../Screens/ScanQR';
 import OffersScreen from '../Screens/OffersScreens/OffersScreen';
 import MoreScreen from '../Screens/MoreScreens/MoreScreen';
+import BundlesScreen from '../Screens/HomeScreens/BundlesScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,31 +49,20 @@ const BottomTabNavigator = () => {
 
   })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} options={{
-        title: "Home",  
-      }} />
+      <Tab.Screen name="Home" component={HomeStackNavigator} options={{title: "Home"}} />
 
-      <Tab.Screen name="Transfers" component={TransfersScreen} options={{
-        title: "Transfers"        
-      }} />
+      <Tab.Screen name="Transfers" component={TransfersScreen} options={{title: "Transfers"}} />
 
-      <Tab.Screen name="ScanQR" component={ScanQR} options={{
-        title: "Scan QR",
-        tabBarButton: () => null        
-      }} />
+      <Tab.Screen name="ScanQR" component={ScanQR} options={{title: "Scan QR",}} />
 
-      <Tab.Screen name="Offers" component={OffersScreen} options={{
-        title: "Offers",
-        tabBarButton: () => null
-      }} />
+      <Tab.Screen name="Offers" component={OffersScreen} options={{title: "Offers",}} />
 
-      <Tab.Screen name="More" component={MoreScreen} options={{
-        title: "More",
-        tabBarButton: () => null
-      }} />
+      <Tab.Screen name="More" component={MoreScreen} options={{title: "More",}} />
+
     </Tab.Navigator>
-  )
-}
+  );
+  
+};
 
 export default BottomTabNavigator;
 

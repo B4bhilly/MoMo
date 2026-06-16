@@ -3,17 +3,26 @@ import React from 'react';
 import { AntDesign, Feather, MaterialCommunityIcons, Entypo} from '@expo/vector-icons';
 
 
-const ForYouScreen = () => {
+const ForYouScreen = ({navigation}) => {
+
+  const handleNavigationToTransfer =() => {
+    navigation.navigate('Transfers');
+  };
+
+  const handleNavigationToBundles =() =>{
+    navigation.navigate('Bundles');
+  };
+
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <View style={styles.mid}>
         <View style={styles.row1}>
-          <TouchableOpacity style={styles.box}>
+          <TouchableOpacity onPress={handleNavigationToBundles} style={styles.box}>
             <AntDesign name="wifi" size={30} color="#005e80" />
             <Text style={styles.text}>Bundles</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.box}>
+          <TouchableOpacity onPress={handleNavigationToTransfer} style={styles.box}>
             <Feather name="send" size={30} color='#005e80' />
             <Text style={styles.text}>Transfers</Text>
           </TouchableOpacity>
@@ -81,6 +90,11 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     borderRadius:10,
+    // shadowColor: '#000',
+    // shadowOffset: { width: 0, height: 1 },
+    // shadowOpacity: 0.25,
+    // shadowRadius: 3.84,
+    // elevation: 5,
   },
   text:{
     marginTop:5,

@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, Dimensions, TouchableOpacity  } from 'react-native';
-import React from 'react';
-import {Ionicons, FontAwesome6, SimpleLineIcons} from '@expo/vector-icons';
+import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Modal, Pressable } from 'react-native';
+import { useState } from 'react';
+import {Ionicons, FontAwesome6, SimpleLineIcons ,AntDesign, MaterialCommunityIcons, Octicons} from '@expo/vector-icons';
 import Svg, { Path, Defs, LinearGradient as SvgGradient, Stop } from 'react-native-svg';
 import TopTab0Navigator from '../../Navigation/TopTab0Navigator';
 
@@ -8,8 +8,10 @@ const { width } = Dimensions.get('window');
 const height = 240; // adjust if needed
 const curveHeight = 70;
 
-
 const HomeScreen = () => {
+
+    const [modalVisible, setModalVisible] = useState(false);
+
   const path = `
   M0,0 
   H${width} 
@@ -31,7 +33,7 @@ const HomeScreen = () => {
           <Path d={path} fill="url(#grad)" />
         </Svg>
         <View style={styles.head}>
-          <TouchableOpacity >
+          <TouchableOpacity onPress={() => setModalVisible(true)}>
             <FontAwesome6 name="user-circle" size={30} color="#cccc00" />
           </TouchableOpacity>
           <TouchableOpacity>
@@ -71,9 +73,95 @@ const HomeScreen = () => {
         <View style={{flex:1,marginTop:30}}>
           <TopTab0Navigator/>
         </View>
-        
-      </View>
+      </View> 
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <Pressable  
+          style={{
+            flex: 1,
+            backgroundColor: 'rgba(0,0,0,0.5)', // dim background
+          }}
+        >
+          <View style={styles.modalContainer}>
+            <View style={{justifyContent:'space-between', flexDirection:'row'}}>
+              <View style={{flexDirection:'row', alignContent:'center'}}>
+                <View style={styles.usericon}>
+                  <FontAwesome6 name="user-large" size={20} color="black" />
+                </View>
+                <View>
+                  <Text style={{ fontSize: 16, marginBottom: 5 , color:'#007099', fontWeight:'500'}}>
+                    User
+                  </Text>
+
+                  <Text style={{ marginBottom: 20 }}>
+                    01234456789
+                  </Text>
+                </View>
+              </View>
+              <TouchableOpacity
+                style=   {styles.closeButton}
+                onPress={() => setModalVisible(false)}
+              >
+                <AntDesign name="close" size={24} color="black" />
+              </TouchableOpacity>
+            </View>
+            <View>
+                <TouchableOpacity style={styles.switch}>
+                  <Text>Switch account</Text> 
+                </TouchableOpacity>
+            </View>
+            <View style={styles.qr}>
+
+            </View>
+
+            <View>
+              <View style={styles.rec}>
+                <SimpleLineIcons name="settings" size={25} color="#cccc00" style={{paddingHorizontal:10}}/>
+                <View style={{paddingRight:40}}>
+                  <Text style={{color:'white', fontSize:15, fontWeight:'bold'}}>Account Settings</Text>
+                  <Text style={{color:'white', fontSize:12}}>Manage wallet and app settings</Text>
+                </View>
+                <Ionicons name="chevron-forward-sharp" size={30} color="#cccc00"  />
+              </View>
+
+              <View style={styles.rec1}>
+                <MaterialCommunityIcons name="headset" size={25} color="#cccc00" style={{paddingHorizontal:10}}/>
+                <View style={{paddingRight:20}}>
+                  <Text style={{color:'white', fontSize:15, fontWeight:'bold'}}>Help</Text>
+                  <Text style={{color:'white', fontSize:12}}>Find Agent, Report Fraud and more...</Text>
+                </View>
+                <Ionicons name="chevron-forward-sharp" size={30} color="#cccc00"  />
+              </View>
+
+              <View style={styles.rec1}>
+                <MaterialCommunityIcons name="check-decagram-outline" size={28} color="#cccc00" style={{paddingHorizontal:10}}/>
+                <View style={{paddingRight:70}}>
+                  <Text style={{color:'white', fontSize:15, fontWeight:'bold'}}>Recommend MoMo</Text>
+                  <Text style={{color:'white', fontSize:12}}>Refer a Friend, Share App</Text>
+                </View>
+                <Ionicons name="chevron-forward-sharp" size={30} color="#cccc00"  />
+              </View>
+            </View>
+
+            <View style={styles.end}>
+              <View style={{flexDirection:'row', alignItems:'center',marginBottom:10}}>
+                <Octicons name="sign-out" size={28} color="#007099" />
+                <Text  style={{color:'#007099', fontSize:15, fontWeight:'bold', marginLeft:10}}>Sign out</Text>
+              </View>
+              <View>
+                <Text style={{color:'grey', fontSize:15, fontWeight:'400', marginLeft:10}}>Version Number: 2.4.7</Text>
+              </View>
+            </View>
+          </View>
+        </Pressable>
+      </Modal>
     </View>
+    
   );
 };
 
@@ -140,10 +228,68 @@ const styles = StyleSheet.create({
     fontSize:17,
     color:'grey',
   },
-  // modal:{
-  //   width:50,
-  //   height:50,
-  //   backgroundColor:'white',
-  // },
-
+  modalContainer: {
+    width: '90%',
+    height: '100%',
+    padding: 20,
+    backgroundColor: 'white',
+    borderTopRightRadius: 20,
+    borderBottomRightRadius:20,
+  },
+  usericon:{
+    height: 40,
+    width: 40, 
+    borderRadius: 40, 
+    backgroundColor: '#cccc00', 
+    justifyContent:'center', 
+    alignItems:'center', 
+    marginBottom: 10,
+    marginRight: 10,
+  },
+  switch:{
+    height:35,
+    width:120,
+    borderRadius:20,
+    borderWidth:1,
+    justifyContent:'center',
+    alignItems:'center',
+    marginLeft:50,
+    borderColor:'#007099',
+    marginBottom:40,    
+  },
+  qr:{
+    height:120,
+    width:120,
+    backgroundColor:'black',
+    alignSelf:'center',
+    marginBottom:20,
+  },
+  rec:{
+    height:65,
+    width:'95%',
+    backgroundColor:'#007099',
+    justifyContent:'center',
+    alignSelf:'center',
+    alignItems:'center',
+    borderRadius:20,
+    marginTop:20,
+    // paddingleft:10,
+    flexDirection:'row',
+  },
+  rec1:{
+    height:65,
+    width:'95%',
+    backgroundColor:'#007099',
+    justifyContent:'center',
+    alignSelf:'center',
+    alignItems:'center',
+    borderRadius:20,
+    marginTop:15,
+    flexDirection:'row',
+  },
+  end:{
+    marginTop:"auto",
+    marginBottom:20,
+    alignItems:'center',
+  },
 });
