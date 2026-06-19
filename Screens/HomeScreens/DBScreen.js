@@ -68,7 +68,7 @@ const DBScreen = ({navigation,route}) => {
                         <Ionicons name="chevron-forward-sharp" size={30} color="#cccc00" />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={handleNavigationToVB} style={styles.box}>
+                <TouchableOpacity onPress={handleNavigationToOVB} style={styles.box}>
                         <Text style={styles.text}>Video Bundles</Text>
                         <Ionicons name="chevron-forward-sharp" size={30} color="#cccc00" />
                 </TouchableOpacity>

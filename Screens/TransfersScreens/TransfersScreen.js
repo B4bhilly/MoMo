@@ -17,6 +17,18 @@ const TransfersScreen = ({navigation}) => {
     Z
   `;
 
+  const handleNavigationToMU = () =>{
+    navigation.navigate('MU')
+  };
+
+  const handleNavigationToCV = () =>{
+    navigation.navigate('CV')
+  };
+
+  const handleNavigationToON = () =>{
+    navigation.navigate('ON')
+  };
+
   return (
     <View style={styles.container}>
     <View style={styles.top}>
@@ -43,17 +55,17 @@ const TransfersScreen = ({navigation}) => {
 
     <View style={{flex:1}}>
       <View style={styles.cont}>
-        <TouchableOpacity style={styles.box}>
+        <TouchableOpacity onPress={handleNavigationToMU} style={styles.box}>
           <FontAwesome5 name="money-bill-wave" size={30} color="#005e80" />
           <Text style={styles.text}>MoMo user</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.box}>
+        <TouchableOpacity onPress={handleNavigationToCV} style={styles.box}>
           <Feather name="gift" size={30} color="#005e80" />
           <Text style={styles.text}>Create voucher</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.box}>
+        <TouchableOpacity onPress={handleNavigationToON} style={styles.box}>
           <FontAwesome6 name="sim-card" size={30} color="#005e80" />
           <Text style={styles.text}>Other networks</Text>
         </TouchableOpacity>

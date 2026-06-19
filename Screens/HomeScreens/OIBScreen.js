@@ -76,9 +76,9 @@ const OIBScreen = ({navigation}) => {
                 </Pressable>
             </View>
         </View>
-        <View style={styles.button}>
-            <Text>NEXT</Text>
-        </View>
+        <TouchableOpacity style={styles.button}>
+            <Text style={{fontSize:20,fontWeight:'bold', color:'white'}}>NEXT</Text>
+        </TouchableOpacity>
     </View>
   )
 }
@@ -154,7 +154,6 @@ const styles = StyleSheet.create({
     tb:{
         height:75,
         width:'100%',
-        backgroundColor:'red',
         borderRadius:20,
         borderWidth:1,
         flexDirection:'row',
@@ -169,17 +168,20 @@ const styles = StyleSheet.create({
     },
     icon:{
         width:'20%',
-        backgroundColor:'yellow',
+        backgroundColor:'#fff',
         justifyContent:'center',
         // alignItems:'center'
     },
     button:{
         height:50,
-        width:'100%',
-        backgroundColor:'grey',
+        width:'90%',
+        backgroundColor:'#ac9b9b',
         borderRadius:20,
         justifyContent:'center',
-        textAlign:'center',
-        alignItems:'center'
+        alignItems:'center',
+        alignSelf:'center',
+        verticalAlign:'bottom',
+        marginTop:'auto',
+        marginBottom:20,
     },
 })
