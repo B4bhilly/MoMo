@@ -12,6 +12,8 @@ import OVBScreen from '../Screens/HomeScreens/OVBScreen';
 import MUScreen from '../Screens/TransfersScreens/MUScreen';
 import CVScreen from '../Screens/TransfersScreens/CVScreen';
 import ONScreen from '../Screens/TransfersScreens/ONScreen';
+import CBPScreen from '../Screens/TransfersScreens/CBPScreen';
+import ScheduleScreen from '../Screens/TransfersScreens/ScheduleScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -31,6 +33,10 @@ const MainStackNavigator = () => {
         <Stack.Screen name="MU" component={MUScreen} />
         <Stack.Screen name="CV" component={CVScreen} />
         <Stack.Screen name="ON" component={ONScreen} />   
+        <Stack.Screen name="CBP" component={CBPScreen} />
+        <Stack.Screen name="Schedule" component={ScheduleScreen} />
+
+
         
     </Stack.Navigator>
     

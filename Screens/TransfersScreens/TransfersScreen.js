@@ -29,6 +29,14 @@ const TransfersScreen = ({navigation}) => {
     navigation.navigate('ON')
   };
 
+  const handleNavigationToCBP = () =>{
+    navigation.navigate('CBP')
+  };
+
+  const handleNavigationToSchedule = () =>{
+    navigation.navigate('Schedule')
+  };
+
   return (
     <View style={styles.container}>
     <View style={styles.top}>
@@ -72,14 +80,19 @@ const TransfersScreen = ({navigation}) => {
       </View>
 
       <View style={styles.cont1}>
-        <TouchableOpacity style={styles.box1}>
+        <TouchableOpacity onPress={handleNavigationToCBP} style={styles.box}>
           <Ionicons name="globe-outline" size={30} color="#005e80" />
           <Text style={styles.text}>Cross border payment</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.box1}>
+        <TouchableOpacity onPress={handleNavigationToSchedule} style={styles.box}>
           <MaterialCommunityIcons name="calendar-clock" size={30} color="#005e80" />
           <Text style={styles.text}>Schedule</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.box}>
+          <Ionicons name="ellipsis-horizontal-outline" size={30} color="#005e80" />
+          <Text style={styles.text}>View all</Text>
         </TouchableOpacity>
 
       </View>
@@ -123,7 +136,7 @@ const styles = StyleSheet.create({
   },
   box: {
     height:90,
-    width:100,
+    width:95,
     backgroundColor:'white',
     alignItems:'center',
     justifyContent:'center',
@@ -135,24 +148,25 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
   },
-  box1: {
-    height:90,
-    width:155,
-    backgroundColor:'white',
-    alignItems:'center',
-    justifyContent:'center',
-    borderRadius:10,
-    // padding: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
+  // box1: {
+  //   height:90,
+  //   width:155,
+  //   backgroundColor:'white',
+  //   alignItems:'center',
+  //   justifyContent:'center',
+  //   borderRadius:10,
+  //   // padding: 20,
+  //   shadowColor: '#000',
+  //   shadowOffset: { width: 0, height: 2 },
+  //   shadowOpacity: 0.25,
+  //   shadowRadius: 3.84,
+  //   elevation: 5,
+  // },
   text: {
     color:'grey',
     fontWeight:'500',
     marginTop:5,
+    textAlign:'center'
   },
   text1: {
     fontSize:26,

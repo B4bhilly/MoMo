@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import RPScreen from '../Screens/HomeScreens/RPScreen';
-import NRScreen from '../Screens/HomeScreens/NRScreen';
+import NRScreen from '../Screens/TransfersScreens/NRScreen';
 
 
 const TopTab3 = createMaterialTopTabNavigator();
@@ -44,7 +44,7 @@ const TopTab3Navigator = () =>{
         
             }}
         >
-            <TopTab3.Screen name="New recipient" component={NRScreen} />
+            <TopTab3.Screen name="New recipient" component={NRScreen} initialParams={{oF:true}}/>
             <TopTab3.Screen name="Favourites" component={RPScreen} />
 
         </TopTab3.Navigator>
