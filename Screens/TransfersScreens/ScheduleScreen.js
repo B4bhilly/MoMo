@@ -22,54 +22,53 @@ const ScheduleScreen = ({navigation}) => {
         </View>
 
         <View style={styles.body}>
-                        <View style={styles.tb}>
-                            <TextInput
-                            placeholder="Enter Number *"
-                            placeholderTextColor={'black'}
-                            value={Number}
-                            keyboardType="numeric"
-                            maxLength={10}
-                            style={styles.textbox}
+            <View style={styles.tb}>
+                <TextInput
+                    placeholder="Enter Number *"
+                    placeholderTextColor={'black'}
+                    value={Number}
+                    keyboardType="numeric"
+                    maxLength={10}
+                    style={styles.textbox}
                             
-                            />
-                            <Pressable style={styles.icon}>
-                                <AntDesign name="user-add" size={30} color="black" />
-                            </Pressable>
-                        </View>
+                />
+                <Pressable style={styles.icon}>
+                    <AntDesign name="user-add" size={30} color="black" />
+                </Pressable>
+            </View>
         
-                        <View style={styles.tb}>
-                            <View style={styles.icon}>
-                                <Text style={styles.cedi}>GHS</Text>
-                            </View>
-                            <TextInput
-                            placeholder="Amount*"
-                            placeholderTextColor={'black'}
-                            value={Number}
-                            keyboardType="numeric"
-                            maxLength={10}
-                            textAlign='right'
-                            style={[styles.textbox,{paddingRight:20}]}
+            <View style={styles.tb}>
+                <View style={styles.icon}>
+                    <Text style={styles.cedi}>GHS</Text>
+                </View>
+                <TextInput
+                    placeholder="Amount *"
+                    placeholderTextColor={'black'}
+                    value={Number}
+                    keyboardType="numeric"
+                    maxLength={10}
+                    textAlign='right'
+                    style={[styles.textbox,{paddingRight:20}]}
                             
-                            />
-                        </View>
-                        <Text style={styles.text}>Available balance: GHS 0.00</Text>
+                />
+            </View>
+            <Text style={styles.text}>Available balance: GHS 0.00</Text>
         
-                        <View style={styles.tb}>
-                            <TextInput
-                            placeholder="Reference (optional)"
-                            placeholderTextColor={'black'}
-                            value={Number}
-                            keyboardType='default'
-                            maxLength={10}
-                            style={[styles.textbox,{width:'100%'}]}
+            <View style={styles.tb}>
+                <TextInput
+                    placeholder="Reference (optional)"
+                    placeholderTextColor={'black'}
+                    value={Number}
+                    keyboardType='default'
+                    maxLength={10}
+                    style={[styles.textbox,{width:'100%'}]}
                             
-                            />
-                        </View>
-                            
-                        <View>
-        
-                        </View>
-                    </View>
+                />
+            </View>
+        </View>
+        <TouchableOpacity style={styles.button}>
+            <Text style={{fontSize:20,fontWeight:'bold', color:'white'}}>NEXT</Text>
+        </TouchableOpacity>
     </View>
   )
 }
