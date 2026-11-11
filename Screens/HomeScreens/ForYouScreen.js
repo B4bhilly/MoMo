@@ -13,6 +13,14 @@ const ForYouScreen = ({navigation}) => {
     navigation.navigate('Bundles');
   };
 
+  const handleNavigationToUtilities= () => {
+    navigation.navigate('util');
+  };
+
+  const handleNavigationToTv = () =>{
+    navigation.navigate('Tv');
+  };
+
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <View style={styles.mid}>
@@ -35,12 +43,12 @@ const ForYouScreen = ({navigation}) => {
 
         {/* second row */}
         <View style={styles.row2}>
-          <TouchableOpacity style={styles.box}>
+          <TouchableOpacity onPress={handleNavigationToUtilities} style={styles.box}>
             <MaterialCommunityIcons name="lightbulb-on-30" size={30} color="#005e80" />
             <Text style={styles.text}>Utilities</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.box}>
+          <TouchableOpacity onPress={handleNavigationToTv} style={styles.box}>
             <Feather name="tv" size={30} color="#005e80" />
             <Text style={styles.text}>TV</Text>
           </TouchableOpacity>

@@ -71,8 +71,9 @@ const styles = StyleSheet.create({
         fontWeight:'bold'   ,
     },
     body:{
-      marginTop: 10,
-      padding:10,
+    //   marginTop: 10,
+      padding:20,
+      height: '100%',
     },
     tb:{
         height:75,
@@ -80,14 +81,15 @@ const styles = StyleSheet.create({
         borderRadius:20,
         borderWidth:1,
         flexDirection:'row',
-        overflow:'hidden'
+        overflow:'hidden',
+        marginRight:10,
     },
     textbox:{
         backgroundColor:'white',
         width:'85%',
         fontSize:20,
         fontWeight:'500',
-        paddingLeft:20
+        paddingLeft:20,
     },
     icon:{
         width:'20%',

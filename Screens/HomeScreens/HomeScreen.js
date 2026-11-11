@@ -8,7 +8,7 @@ const { width } = Dimensions.get('window');
 const height = 240; // adjust if needed
 const curveHeight = 70;
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
 
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -19,6 +19,10 @@ const HomeScreen = () => {
   A${width / 1.5},${curveHeight} 0 0 1 0,${height - curveHeight} 
   Z
   `;
+
+  const handleNavigationToSignup = () =>{
+    navigation.navigate('Signup');
+  };
 
   return (
     <View style={styles.container}>
@@ -149,10 +153,10 @@ const HomeScreen = () => {
             </View>
 
             <View style={styles.end}>
-              <View style={{flexDirection:'row', alignItems:'center',marginBottom:10}}>
+              <TouchableOpacity onPress={handleNavigationToSignup} style={{flexDirection:'row', alignItems:'center',marginBottom:10}}>
                 <Octicons name="sign-out" size={28} color="#007099" />
                 <Text  style={{color:'#007099', fontSize:15, fontWeight:'bold', marginLeft:10}}>Sign out</Text>
-              </View>
+              </TouchableOpacity>
               <View>
                 <Text style={{color:'grey', fontSize:15, fontWeight:'400', marginLeft:10}}>Version Number: 2.4.7</Text>
               </View>
