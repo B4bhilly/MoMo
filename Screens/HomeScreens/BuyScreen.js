@@ -3,13 +3,18 @@ import React from 'react';
 import { MaterialIcons, Feather, MaterialCommunityIcons, Entypo, AntDesign, Fontisto} from '@expo/vector-icons';
 
 
-const BuyScreen = () => {
+const BuyScreen = ({navigation}) => {
+
+  const handleNavigationToAirtime = () =>{
+    navigation.navigate("Airtime");
+  };
+
   return (
     <View showsVerticalScrollIndicator={false} style={styles.container}>
       <View style={styles.mid}>
         <View style={styles.row1}>
-          <TouchableOpacity style={styles.box}>
-            <MaterialCommunityIcons name="phone-message-outline" size={30} color="#005e80" />
+          <TouchableOpacity onPress={handleNavigationToAirtime} style={styles.box}>
+              <MaterialCommunityIcons name="phone-message-outline" size={30} color="#005e80" />
           <Text style={styles.text}>Airtime</Text>
           </TouchableOpacity>
 

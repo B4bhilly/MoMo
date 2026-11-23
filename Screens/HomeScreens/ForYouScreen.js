@@ -21,6 +21,10 @@ const ForYouScreen = ({navigation}) => {
     navigation.navigate('Tv');
   };
 
+  const handleNavigationToAirtime = () =>{
+    navigation.navigate('Airtime');
+  };
+
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <View style={styles.mid}>
@@ -35,7 +39,7 @@ const ForYouScreen = ({navigation}) => {
             <Text style={styles.text}>Transfers</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.box}>
+          <TouchableOpacity onPress={handleNavigationToAirtime} style={styles.box}>
             <MaterialCommunityIcons name="phone-message-outline" size={30} color="#005e80" />
             <Text style={styles.text}>Airtime</Text>
           </TouchableOpacity>

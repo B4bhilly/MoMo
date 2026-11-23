@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Dimensions, Text, TouchableOpacity } from 'react-native';
-// import PhoneInput from 'react-native-phone-number-input';
+import CountryPicker from 'react-native-country-picker-modal';
 import Svg, { Path, Defs, LinearGradient as SvgGradient, Stop } from 'react-native-svg';
+import PhoneInput from './CountryPicker';
 
 const { width } = Dimensions.get('window');
 const height = 320; // adjust if needed
@@ -19,71 +20,47 @@ const LoginScreen = ({navigation}) => {
   const handleNavigationToSignup = () =>{
     navigation.navigate('Signup');
   };
+  
+  const handleNavigationToOTP = () =>{
+    navigation.navigate('OTP');
+  };
 
   return (
     <View style={styles.container}>
+      <View style={styles.top}>
+        <Svg height={height} width={width} style={StyleSheet.absoluteFill}>
+          <Defs>
+            <SvgGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+              <Stop offset="0" stopColor="#007099" stopOpacity="1" />
+              <Stop offset="1" stopColor="#002e47" stopOpacity="1" />
+            </SvgGradient>
+          </Defs>
+          <Path d={path} fill="url(#grad)" />
+        </Svg>
+      </View>
 
-        <View style={styles.top}>
-            <Svg height={height} width={width} style={StyleSheet.absoluteFill}>
-                <Defs>
-                    <SvgGradient id="grad" x1="0" y1="0" x2="0" y2="1">
-                        <Stop offset="0" stopColor="#007099" stopOpacity="1" />
-                        <Stop offset="1" stopColor="#002e47" stopOpacity="1" />
-                    </SvgGradient>
-                </Defs>
-            <Path d={path} fill="url(#grad)" />
-            </Svg>
+      <View>
+        <View style={styles.box}>
+          <Text style={[styles.text,{textAlign:'center',fontSize:25,marginBottom:40}]}>Welcome to <Text style={{fontWeight:'bold',textAlign:'center'}}>MoMo</Text></Text>
+          <View>
+            <PhoneInput/>
+              </View>
         </View>
-
-        <View>
-            <View style={styles.box}>
-                <Text style={[styles.text,{textAlign:'center',fontSize:25}]}>Welcome to <Text style={{fontWeight:'bold',textAlign:'center'}}>MoMo</Text></Text>
-                {/* <View style={styles.bstyle}>
-                  <View style={styles.sbox}>
-
-                  </View>
-
-                  <View style={styles.bbox}>
-                  </View>
-                </View> */}
-                  {/* <PhoneInput
-                    defaultCode='GH'
-                    layout='first'
-                    placeholder='Enter number *'
-                    containerStyle={{
-                      // backgroundColor:'red',
-                      
-                    }}
-                    textInputProps={{
-                      placeholderTextColor:'black',
-                      style:{
-                        fontSize:20,
-                        fontWeight:'bold',
-                        
-
-                      }
-                    }}
-                    textContainerStyle={{
-                      
-                    }}                    
-                  /> */}
-            </View>
             
-            <View style={styles.tedit}>
-              <Text style={styles.textx}>
-                 By using this app you agree to our{' '}
-                <Text style={styles.link}>Mobile {'\n'} Terms of Use{' '}</Text>
-                and
-                <Text style={styles.link}> Privacy Policy</Text>
-              </Text>
-            </View>
-
-            <View style={styles.bottom}>
-              <TouchableOpacity onPress={handleNavigationToSignup} style={styles.button}>
-                <Text style={[styles.text, {color:'white'}]}>NEXT</Text>
-              </TouchableOpacity>
-            </View>
-        </View>
+        {/* <View style={styles.tedit}>
+          <Text style={styles.textx}>
+            By using this app you agree to our{' '}
+          <Text style={styles.link}>Mobile {'\n'} Terms of Use{' '}</Text>
+            and
+          <Text style={styles.link}> Privacy Policy</Text>
+          </Text>
+        </View> */}
+      </View>
+      <View style={styles.bottom}>
+          <TouchableOpacity onPress={handleNavigationToOTP} style={styles.button}>
+            <Text style={[styles.text, {color:'white'}]}>NEXT</Text>
+          </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -101,7 +78,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -120,
     alignSelf:'center',
-    height: 170,
+    height: 200,
     width: '90%',
     backgroundColor: 'white',
     borderRadius: 25,
@@ -148,8 +125,9 @@ const styles = StyleSheet.create({
     color:'#005e80'
   },
   bottom:{
+    marginTop:'auto',
     alignItems:'center',
-    top: '80%',
+    marginBottom:30,
   },
   button:{
     height:60,

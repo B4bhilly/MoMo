@@ -15,6 +15,8 @@ import ONScreen from '../Screens/TransfersScreens/ONScreen';
 import CBPScreen from '../Screens/TransfersScreens/CBPScreen';
 import ScheduleScreen from '../Screens/TransfersScreens/ScheduleScreen';
 import TvScreen from '../Screens/HomeScreens/TvScreen';
+import AirtimeScreen from '../Screens/HomeScreens/AirtimeScreen';
+import OTPscreen from '../Screens/OTPScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -37,6 +39,8 @@ const MainStackNavigator = () => {
         <Stack.Screen name="CBP" component={CBPScreen} />
         <Stack.Screen name="Schedule" component={ScheduleScreen} />
         <Stack.Screen name="Tv" component={TvScreen} />
+        <Stack.Screen name="Airtime" component={AirtimeScreen} />
+        <Stack.Screen name="OTP" component={OTPscreen} />
 
         
     </Stack.Navigator>

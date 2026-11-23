@@ -71,9 +71,9 @@ const TvScreen = ({navigation}) => {
           <TouchableOpacity style={[styles.box,{marginLeft:7}]}>
             <View style={styles.image}>
                 <Image
-                    source={require('../../assets/Images/img4.png')}
-                    style={styles.size}
-                    resizeMode="stretch"                        
+                    source={require('../../assets/Images/img6.png')}
+                    style={[styles.size,{height:50,width:50}]}
+                    resizeMode="stretch"                      
                 />
             </View>
             <Text style={styles.text}>Dstv/Gotv</Text>
